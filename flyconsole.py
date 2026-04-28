@@ -52,6 +52,23 @@ class Colors:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 
+def show_banner():
+    """Flyconsole Advanced ASCII Banner"""
+    banner = f"""
+{Colors.CYAN}    
+    ███████╗██╗     ██╗   ██╗ ██████╗ ██████╗ ███╗   ██╗███████╗ ██████╗ ██╗     ███████╗
+    ██╔════╝██║     ╚██╗ ██╔╝██╔════╝██╔═══██╗████╗  ██║██╔════╝██╔═══██╗██║     ██╔════╝
+    █████╗  ██║      ╚████╔╝ ██║     ██║   ██║██╔██╗ ██║███████╗██║   ██║██║     █████╗  
+    ██╔══╝  ██║       ╚██╔╝  ██║     ██║   ██║██║╚██╗██║╚════██║██║   ██║██║     ██╔══╝  
+    ██║     ███████╗   ██║   ╚██████╗╚██████╔╝██║ ╚████║███████║╚██████╔╝███████╗███████╗
+    ╚═╝     ╚══════╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚══════╝╚══════╝
+                                                                                    
+    {Colors.RED}{Colors.BOLD}>>> ADVANCED SECURITY ANALYSIS FRAMEWORK v2.0 <<<{Colors.END}
+    {Colors.WHITE}Created by: {Colors.YELLOW}Mamun (Natespo){Colors.END} | {Colors.WHITE}Status: {Colors.GREEN}Operational{Colors.END}
+    {Colors.BLUE}─────────────────────────────────────────────────────────────────────────────{Colors.END}
+    """
+    print(banner)
+
 class Logger:
     """Advanced logging system"""
     def __init__(self, log_file="flyconsole_log.json"):
@@ -558,16 +575,7 @@ class AdvancedModules:
 def show_advanced_menu():
     """Display the advanced menu"""
     clear_screen()
-    print(f"""{Colors.CYAN}{Colors.BOLD}
-    ╔══════════════════════════════════════════╗
-    ║     FLYCONSOLE ADVANCED v2.0              ║
-    ║     Security Analysis Framework           ║
-    ╚══════════════════════════════════════════╝
-    {Colors.END}
-    {Colors.RED}{Colors.BOLD}Advanced Penetration Testing Toolkit{Colors.END}
-    {Colors.WHITE}Developer: Mamun (Natespo){Colors.END}
-    {Colors.YELLOW}[!] Authorized Testing Only [!]{Colors.END}
-    """)
+    show_banner()
     
     print(f"\n{Colors.BOLD}═══════════ MAIN MODULES ═══════════{Colors.END}")
     print(f"{Colors.WHITE}1.  Comprehensive Security Scan")
@@ -618,6 +626,7 @@ def main():
     args = parser.parse_args()
     
     clear_screen()
+    show_banner()
     print(f"{Colors.CYAN}{Colors.BOLD}")
     print("Initializing Flyconsole Advanced Engine...")
     
